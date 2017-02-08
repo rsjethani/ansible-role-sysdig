@@ -20,7 +20,7 @@ install:
 
   # Create ansible.cfg with correct roles_path
   #- printf '[defaults]\nroles_path=../' >ansible.cfg
-   - export 'ANSIBLE_ROLES_PATH=../'
+  - export 'ANSIBLE_ROLES_PATH=../'
 
 script:
   # Basic role syntax check
