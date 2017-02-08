@@ -19,9 +19,11 @@ install:
   - ansible --version
 
 script:
-  - export ANSIBLE_ROLES_PATH="../"
+  - printf '[defaults]\nroles_path=../' > ansible.cfg
 
-  - echo $PWD  $USER
+#  - export ANSIBLE_ROLES_PATH="../"
+
+#  - echo $PWD  $USER
 
   # Basic role syntax check
   - ansible-playbook tests/test.yml -vvi tests/inventory --syntax-check
