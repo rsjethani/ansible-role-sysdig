@@ -18,18 +18,15 @@ install:
   # Check ansible version
   - ansible --version
 
-script:
+  # Set roles path
   - printf '[defaults]\nroles_path=../' > ansible.cfg
 
-#  - export ANSIBLE_ROLES_PATH="../"
-
-#  - echo $PWD  $USER
-
+script:
   # Basic role syntax check
-  - ansible-playbook tests/test.yml -vvi tests/inventory --syntax-check
+  - ansible-playbook tests/test.yml --connection local -vvi tests/inventory --syntax-check
 
   # Test Role functionality
-  - ansible-playbook tests/test.yml -vvi tests/inventory
+  - ansible-playbook tests/test.yml --connection local -vvi tests/inventory
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
