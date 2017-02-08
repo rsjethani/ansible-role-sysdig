@@ -8,8 +8,6 @@ env:
     version: 14.04
   - distro: ubuntu
     version: 12.04
-  - distro: debian
-    version: 7.0
 
 
 # Install ansible
