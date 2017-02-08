@@ -28,5 +28,8 @@ script:
   # Test Role functionality
   - ansible-playbook tests/test.yml --connection local -vvi tests/inventory
 
+  # Check Sysdig installed properly
+  - sysdig --version
+
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
