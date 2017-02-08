@@ -2,7 +2,7 @@
 language: python
 python: "2.7"
 
-# Use the new container infrastructure
+dist: trusty
 sudo: required
 
 # Install ansible
@@ -19,8 +19,9 @@ install:
   - ansible --version
 
 script:
-  - export 'ANSIBLE_ROLES_PATH=../'
+  - export ANSIBLE_ROLES_PATH=..
 
+  - printenv ANSIBLE_ROLES_PATH
   # Basic role syntax check
   - ansible-playbook tests/test.yml -vvi tests/inventory --syntax-check
 
