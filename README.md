@@ -1,7 +1,7 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+This role installs the (Sysdig)[http://www.sysdig.org/] monitoring tool.
 
 Requirements
 ------------
@@ -25,12 +25,12 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: rsjethani.sysdig }
 
 License
 -------
 
-BSD
+Apache v2.0
 
 Author Information
 ------------------
