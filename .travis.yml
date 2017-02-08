@@ -2,8 +2,15 @@
 language: python
 python: "2.7"
 
-dist: trusty
 sudo: required
+env:
+  - distro: ubuntu
+    version: 14.04
+  - distro: ubuntu
+    version: 12.04
+  - distro: debian
+    version: 7.0
+
 
 # Install ansible
 addons:
