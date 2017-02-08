@@ -1,7 +1,7 @@
 Role Name
 =========
 
-This role installs the (Sysdig)[http://www.sysdig.org/] monitoring tool.
+This role installs the [Sysdig](http://www.sysdig.org/) monitoring tool.
 
 Requirements
 ------------

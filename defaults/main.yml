@@ -1,2 +1,6 @@
 ---
-# defaults file for sysdig
+
+sysdig_gpg_key_url: "https://s3.amazonaws.com/download.draios.com/DRAIOS-GPG-KEY.public"
+
+sysdig_repo_url: "http://download.draios.com/stable/deb/draios.list"
+
