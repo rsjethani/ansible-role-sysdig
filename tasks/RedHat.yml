@@ -2,20 +2,20 @@
   
 - name: Add Draios GPG key
   rpm_key:
-    url: "{{ sysdig_gpg_key_url }}"
+    key: "{{ sysdig_gpg_key_url }}"
 
-- name: Get Draios repository source line
-  uri:
+- name: Add draios yum repository
+  get_url:
+    dest: /etc/yum.repos.d/draios.repo
     url: "{{ sysdig_rpm_url }}"
-    return_content: yes
-  register: repo_str
+    force: yes
 
-- name: Add source line to apt sources
-  # TODO: Replace command with RedHat specific module for this function
-  command: curl -s -o /etc/yum.repos.d/draios.repo http://download.draios.com/stable/rpm/draios.repo
-
-- name: Update Cache
+# Add epel-release repo so that sysdig's dependency
+# 'dkms' can be installed
+- name: Add epel-release repo
   yum:
+    name: epel-release
+    state: present
     update_cache: yes
 
 - name: Install Linux Headers
