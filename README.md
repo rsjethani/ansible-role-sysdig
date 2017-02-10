@@ -30,7 +30,7 @@ If you want to install sysdig as a Docker container:
 
 License
 -------
-Apache v2.0
+MIT
 
 
 Author Information
