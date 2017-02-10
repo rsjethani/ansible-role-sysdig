@@ -7,3 +7,5 @@ sysdig_deb_url: "http://download.draios.com/stable/deb/draios.list"
 sysdig_rpm_url: "http://download.draios.com/stable/rpm/draios.repo"
 
 sysdig_epel_url: "http://mirror.us.leaseweb.net/epel/6/i386/epel-release-6-8.noarch.rpm"
+
+sysdig_install_type: "traditional"
