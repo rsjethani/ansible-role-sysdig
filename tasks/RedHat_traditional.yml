@@ -1,0 +1,24 @@
+---
+  
+- name: Add Draios GPG key
+  rpm_key:
+    key: "{{ sysdig_gpg_key_url }}"
+
+- name: Add draios yum repository
+  get_url:
+    dest: /etc/yum.repos.d/draios.repo
+    url: "{{ sysdig_rpm_url }}"
+    force: yes
+
+# Add epel-release repo so that sysdig's dependency
+# 'dkms' can be installed
+- name: Add epel-release repo
+  yum:
+    name: epel-release
+    state: present
+    update_cache: yes
+
+- name: Install sysdig
+  yum:
+    name: sysdig
+    state: present

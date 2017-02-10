@@ -7,11 +7,5 @@
     update_cache: yes
     cache_valid_time: 43200
 
-- name: Include tasks for traditional install
-  include: Debian_traditional.yml
-  when: sysdig_install_type == "traditional"
-
-- name: Include tasks for container install
-  include: Debian_container.yml
-  when: sysdig_install_type == "container"
-
+- name: Include tasks for selected installation type
+  include: Debian_{{ sysdig_install_type }}.yml
