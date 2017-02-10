@@ -7,33 +7,11 @@
     update_cache: yes
     cache_valid_time: 43200
 
-- block:
-  - name: Add Draios GPG key
-    apt_key:
-      url: "{{ sysdig_gpg_key_url }}"
-
-  - name: Get Draios repository source line
-    uri:
-      url: "{{ sysdig_deb_url }}"
-      return_content: yes
-    register: repo_str
-
-  - name: Add source line to apt sources
-    apt_repository:
-      repo: "{{ repo_str.content.strip() }}"
-      filename: draios
-
-
-  - name: Install sysdig
-    apt:
-      name: sysdig
-      state: present
-
+- name: Include tasks for traditional install
+  include: Debian_traditional.yml
   when: sysdig_install_type == "traditional"
 
-
-- block:
-  - name: pull sysdig image
-    command: docker pull sysdig/sysdig
-
+- name: Include tasks for container install
+  include: Debian_container.yml
   when: sysdig_install_type == "container"
+

@@ -1,0 +1,5 @@
+---
+  
+- name: pull sysdig image
+  command: docker pull sysdig/sysdig
+
