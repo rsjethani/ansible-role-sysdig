@@ -1,4 +1,4 @@
-Role Name
+Sysdig
 =========
 This role installs the [Sysdig](http://www.sysdig.org/) monitoring tool.
 
