@@ -5,7 +5,7 @@ This role installs the [Sysdig](http://www.sysdig.org/) monitoring tool.
 
 Requirements
 ------------
-If installing as a Docker container then this roles assumes that a Docker is running on the specified hosts. Apart from this no special requirements.
+If installing as a Docker container then this roles assumes that Docker is running on the specified hosts. Apart from this no special requirements.
 
 
 Variables
@@ -35,4 +35,4 @@ Apache v2.0
 
 Author Information
 ------------------
-Ravi Shekhar Jethani<rsjethani@gmail.com>
+Ravi Shekhar Jethani <rsjethani@gmail.com>
