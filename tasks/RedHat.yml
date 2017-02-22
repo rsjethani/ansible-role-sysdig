@@ -1,6 +1,7 @@
 ---
   
 - name: Install Linux Headers
+  become: yes
   yum: 
     name: kernel-devel-{{ ansible_kernel }}
     state: present

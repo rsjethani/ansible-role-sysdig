@@ -1,6 +1,7 @@
 ---
   
 - name: Install Linux Headers
+  become: yes
   apt: 
     name: linux-headers-{{ ansible_kernel }}
     state: present

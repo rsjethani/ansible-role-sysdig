@@ -1,19 +1,19 @@
 ---
-- block:  
-  - name: Add Draios GPG key
-    apt_key:
-      url: "{{ sysdig_gpg_key_url }}"
+- name: Get Draios repository source line
+  uri:
+    url: "{{ sysdig_deb_url }}"
+    return_content: yes
+  register: repo_str
 
-  - name: Get Draios repository source line
-    uri:
-      url: "{{ sysdig_deb_url }}"
-      return_content: yes
-    register: repo_str
-
+- block:
   - name: Add source line to apt sources
     apt_repository:
       repo: "{{ repo_str.content.strip() }}"
       filename: draios
+
+  - name: Add Draios GPG key
+    apt_key:
+      url: "{{ sysdig_gpg_key_url }}"
 
   - name: Install sysdig
     apt:

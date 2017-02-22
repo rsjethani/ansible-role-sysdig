@@ -1,5 +1,6 @@
 ---
   
 - name: pull sysdig image
+  become: yes
   command: docker pull sysdig/sysdig
 
